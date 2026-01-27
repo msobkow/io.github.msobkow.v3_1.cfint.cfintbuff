@@ -66,11 +66,39 @@ public class CFIntBuffLicenseDefaultFactory
 		return( key );
 	}
 
+	public CFIntBuffLicenseByLicnTenantIdxKey ensureByLicnTenantIdxKey(ICFIntLicenseByLicnTenantIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffLicenseByLicnTenantIdxKey) {
+			return( (CFIntBuffLicenseByLicnTenantIdxKey)key );
+		}
+		else {
+			CFIntBuffLicenseByLicnTenantIdxKey mapped = new CFIntBuffLicenseByLicnTenantIdxKey();
+			mapped.setRequiredTenantId( key.getRequiredTenantId() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntLicenseByDomainIdxKey newByDomainIdxKey() {
 		ICFIntLicenseByDomainIdxKey key =
 			new CFIntBuffLicenseByDomainIdxKey();
 		return( key );
+	}
+
+	public CFIntBuffLicenseByDomainIdxKey ensureByDomainIdxKey(ICFIntLicenseByDomainIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffLicenseByDomainIdxKey) {
+			return( (CFIntBuffLicenseByDomainIdxKey)key );
+		}
+		else {
+			CFIntBuffLicenseByDomainIdxKey mapped = new CFIntBuffLicenseByDomainIdxKey();
+			mapped.setRequiredTopDomainId( key.getRequiredTopDomainId() );
+			return( mapped );
+		}
 	}
 
 	@Override
@@ -80,10 +108,39 @@ public class CFIntBuffLicenseDefaultFactory
 		return( key );
 	}
 
+	public CFIntBuffLicenseByUNameIdxKey ensureByUNameIdxKey(ICFIntLicenseByUNameIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffLicenseByUNameIdxKey) {
+			return( (CFIntBuffLicenseByUNameIdxKey)key );
+		}
+		else {
+			CFIntBuffLicenseByUNameIdxKey mapped = new CFIntBuffLicenseByUNameIdxKey();
+			mapped.setRequiredTopDomainId( key.getRequiredTopDomainId() );
+			mapped.setRequiredName( key.getRequiredName() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntLicense newRec() {
 		ICFIntLicense rec =
 			new CFIntBuffLicense();
 		return( rec );
+	}
+
+	public CFIntBuffLicense ensureRec(ICFIntLicense rec) {
+		if( rec == null ) {
+			return( null );
+		}
+		else if (rec instanceof CFIntBuffLicense) {
+			return( (CFIntBuffLicense)rec );
+		}
+		else {
+			CFIntBuffLicense mapped = new CFIntBuffLicense();
+			mapped.set(rec);
+			return( mapped );
+		}
 	}
 }

@@ -66,11 +66,43 @@ public class CFIntBuffMajorVersionDefaultFactory
 		return( hpkey );
 	}
 
+	public CFIntBuffMajorVersionHPKey ensureHPKey(ICFIntMajorVersionHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFIntBuffMajorVersionHPKey) {
+			return( (CFIntBuffMajorVersionHPKey)key );
+		}
+		else {
+			CFIntBuffMajorVersionHPKey mapped = new CFIntBuffMajorVersionHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredId( key.getRequiredId() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntMajorVersionByTenantIdxKey newByTenantIdxKey() {
 		ICFIntMajorVersionByTenantIdxKey key =
 			new CFIntBuffMajorVersionByTenantIdxKey();
 		return( key );
+	}
+
+	public CFIntBuffMajorVersionByTenantIdxKey ensureByTenantIdxKey(ICFIntMajorVersionByTenantIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffMajorVersionByTenantIdxKey) {
+			return( (CFIntBuffMajorVersionByTenantIdxKey)key );
+		}
+		else {
+			CFIntBuffMajorVersionByTenantIdxKey mapped = new CFIntBuffMajorVersionByTenantIdxKey();
+			mapped.setRequiredTenantId( key.getRequiredTenantId() );
+			return( mapped );
+		}
 	}
 
 	@Override
@@ -80,11 +112,40 @@ public class CFIntBuffMajorVersionDefaultFactory
 		return( key );
 	}
 
+	public CFIntBuffMajorVersionBySubProjectIdxKey ensureBySubProjectIdxKey(ICFIntMajorVersionBySubProjectIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffMajorVersionBySubProjectIdxKey) {
+			return( (CFIntBuffMajorVersionBySubProjectIdxKey)key );
+		}
+		else {
+			CFIntBuffMajorVersionBySubProjectIdxKey mapped = new CFIntBuffMajorVersionBySubProjectIdxKey();
+			mapped.setRequiredSubProjectId( key.getRequiredSubProjectId() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntMajorVersionByNameIdxKey newByNameIdxKey() {
 		ICFIntMajorVersionByNameIdxKey key =
 			new CFIntBuffMajorVersionByNameIdxKey();
 		return( key );
+	}
+
+	public CFIntBuffMajorVersionByNameIdxKey ensureByNameIdxKey(ICFIntMajorVersionByNameIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffMajorVersionByNameIdxKey) {
+			return( (CFIntBuffMajorVersionByNameIdxKey)key );
+		}
+		else {
+			CFIntBuffMajorVersionByNameIdxKey mapped = new CFIntBuffMajorVersionByNameIdxKey();
+			mapped.setRequiredSubProjectId( key.getRequiredSubProjectId() );
+			mapped.setRequiredName( key.getRequiredName() );
+			return( mapped );
+		}
 	}
 
 	@Override
@@ -94,10 +155,38 @@ public class CFIntBuffMajorVersionDefaultFactory
 		return( rec );
 	}
 
+	public CFIntBuffMajorVersion ensureRec(ICFIntMajorVersion rec) {
+		if( rec == null ) {
+			return( null );
+		}
+		else if (rec instanceof CFIntBuffMajorVersion) {
+			return( (CFIntBuffMajorVersion)rec );
+		}
+		else {
+			CFIntBuffMajorVersion mapped = new CFIntBuffMajorVersion();
+			mapped.set(rec);
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntMajorVersionH newHRec() {
 		ICFIntMajorVersionH hrec =
 			new CFIntBuffMajorVersionH();
 		return( hrec );
+	}
+
+	public CFIntBuffMajorVersionH ensureHRec(ICFIntMajorVersionH hrec) {
+		if (hrec == null) {
+			return( null );
+		}
+		else if( hrec instanceof CFIntBuffMajorVersionH) {
+			return( (CFIntBuffMajorVersionH)hrec );
+		}
+		else {
+			CFIntBuffMajorVersionH mapped = new CFIntBuffMajorVersionH();
+			mapped.set(hrec);
+			return( mapped );
+		}
 	}
 }

@@ -66,11 +66,43 @@ public class CFIntBuffURLProtocolDefaultFactory
 		return( hpkey );
 	}
 
+	public CFIntBuffURLProtocolHPKey ensureHPKey(ICFIntURLProtocolHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFIntBuffURLProtocolHPKey) {
+			return( (CFIntBuffURLProtocolHPKey)key );
+		}
+		else {
+			CFIntBuffURLProtocolHPKey mapped = new CFIntBuffURLProtocolHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredURLProtocolId( key.getRequiredURLProtocolId() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntURLProtocolByUNameIdxKey newByUNameIdxKey() {
 		ICFIntURLProtocolByUNameIdxKey key =
 			new CFIntBuffURLProtocolByUNameIdxKey();
 		return( key );
+	}
+
+	public CFIntBuffURLProtocolByUNameIdxKey ensureByUNameIdxKey(ICFIntURLProtocolByUNameIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffURLProtocolByUNameIdxKey) {
+			return( (CFIntBuffURLProtocolByUNameIdxKey)key );
+		}
+		else {
+			CFIntBuffURLProtocolByUNameIdxKey mapped = new CFIntBuffURLProtocolByUNameIdxKey();
+			mapped.setRequiredName( key.getRequiredName() );
+			return( mapped );
+		}
 	}
 
 	@Override
@@ -80,6 +112,20 @@ public class CFIntBuffURLProtocolDefaultFactory
 		return( key );
 	}
 
+	public CFIntBuffURLProtocolByIsSecureIdxKey ensureByIsSecureIdxKey(ICFIntURLProtocolByIsSecureIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffURLProtocolByIsSecureIdxKey) {
+			return( (CFIntBuffURLProtocolByIsSecureIdxKey)key );
+		}
+		else {
+			CFIntBuffURLProtocolByIsSecureIdxKey mapped = new CFIntBuffURLProtocolByIsSecureIdxKey();
+			mapped.setRequiredIsSecure( key.getRequiredIsSecure() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntURLProtocol newRec() {
 		ICFIntURLProtocol rec =
@@ -87,10 +133,38 @@ public class CFIntBuffURLProtocolDefaultFactory
 		return( rec );
 	}
 
+	public CFIntBuffURLProtocol ensureRec(ICFIntURLProtocol rec) {
+		if( rec == null ) {
+			return( null );
+		}
+		else if (rec instanceof CFIntBuffURLProtocol) {
+			return( (CFIntBuffURLProtocol)rec );
+		}
+		else {
+			CFIntBuffURLProtocol mapped = new CFIntBuffURLProtocol();
+			mapped.set(rec);
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntURLProtocolH newHRec() {
 		ICFIntURLProtocolH hrec =
 			new CFIntBuffURLProtocolH();
 		return( hrec );
+	}
+
+	public CFIntBuffURLProtocolH ensureHRec(ICFIntURLProtocolH hrec) {
+		if (hrec == null) {
+			return( null );
+		}
+		else if( hrec instanceof CFIntBuffURLProtocolH) {
+			return( (CFIntBuffURLProtocolH)hrec );
+		}
+		else {
+			CFIntBuffURLProtocolH mapped = new CFIntBuffURLProtocolH();
+			mapped.set(hrec);
+			return( mapped );
+		}
 	}
 }

@@ -66,11 +66,43 @@ public class CFIntBuffMimeTypeDefaultFactory
 		return( hpkey );
 	}
 
+	public CFIntBuffMimeTypeHPKey ensureHPKey(ICFIntMimeTypeHPKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if( key instanceof CFIntBuffMimeTypeHPKey) {
+			return( (CFIntBuffMimeTypeHPKey)key );
+		}
+		else {
+			CFIntBuffMimeTypeHPKey mapped = new CFIntBuffMimeTypeHPKey();
+			mapped.setAuditClusterId(key.getAuditClusterId());
+			mapped.setAuditActionId(key.getAuditActionId());
+			mapped.setAuditSessionId(key.getAuditSessionId());
+			mapped.setAuditStamp(key.getAuditStamp());
+			mapped.setRequiredMimeTypeId( key.getRequiredMimeTypeId() );
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntMimeTypeByUNameIdxKey newByUNameIdxKey() {
 		ICFIntMimeTypeByUNameIdxKey key =
 			new CFIntBuffMimeTypeByUNameIdxKey();
 		return( key );
+	}
+
+	public CFIntBuffMimeTypeByUNameIdxKey ensureByUNameIdxKey(ICFIntMimeTypeByUNameIdxKey key) {
+		if (key == null) {
+			return( null );
+		}
+		else if (key instanceof CFIntBuffMimeTypeByUNameIdxKey) {
+			return( (CFIntBuffMimeTypeByUNameIdxKey)key );
+		}
+		else {
+			CFIntBuffMimeTypeByUNameIdxKey mapped = new CFIntBuffMimeTypeByUNameIdxKey();
+			mapped.setRequiredName( key.getRequiredName() );
+			return( mapped );
+		}
 	}
 
 	@Override
@@ -80,10 +112,38 @@ public class CFIntBuffMimeTypeDefaultFactory
 		return( rec );
 	}
 
+	public CFIntBuffMimeType ensureRec(ICFIntMimeType rec) {
+		if( rec == null ) {
+			return( null );
+		}
+		else if (rec instanceof CFIntBuffMimeType) {
+			return( (CFIntBuffMimeType)rec );
+		}
+		else {
+			CFIntBuffMimeType mapped = new CFIntBuffMimeType();
+			mapped.set(rec);
+			return( mapped );
+		}
+	}
+
 	@Override
 	public ICFIntMimeTypeH newHRec() {
 		ICFIntMimeTypeH hrec =
 			new CFIntBuffMimeTypeH();
 		return( hrec );
+	}
+
+	public CFIntBuffMimeTypeH ensureHRec(ICFIntMimeTypeH hrec) {
+		if (hrec == null) {
+			return( null );
+		}
+		else if( hrec instanceof CFIntBuffMimeTypeH) {
+			return( (CFIntBuffMimeTypeH)hrec );
+		}
+		else {
+			CFIntBuffMimeTypeH mapped = new CFIntBuffMimeTypeH();
+			mapped.set(hrec);
+			return( mapped );
+		}
 	}
 }
