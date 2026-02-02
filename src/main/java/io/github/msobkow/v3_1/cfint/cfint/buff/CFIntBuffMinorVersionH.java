@@ -149,12 +149,12 @@ public class CFIntBuffMinorVersionH
     }
 
     @Override
-    public long getAuditClusterId() {
+    public CFLibDbKeyHash256 getAuditClusterId() {
         return pkey.getAuditClusterId();
     }
 
     @Override
-    public void setAuditClusterId(long auditClusterId) {
+    public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId) {
         pkey.setAuditClusterId(auditClusterId);
     }
 
