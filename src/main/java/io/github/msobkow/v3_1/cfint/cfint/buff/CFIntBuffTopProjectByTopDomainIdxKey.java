@@ -83,8 +83,8 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 		}
 		else if( obj instanceof ICFIntTopProjectByTopDomainIdxKey ) {
 			ICFIntTopProjectByTopDomainIdxKey rhs = (ICFIntTopProjectByTopDomainIdxKey)obj;
-			if( getRequiredTopDomainId() != null && !getRequiredTopDomainId().isNull() ) {
-				if( rhs.getRequiredTopDomainId() != null && !rhs.getRequiredTopDomainId().isNull() ) {
+			if( getRequiredTopDomainId() != null ) {
+				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
 						return( false );
 					}
@@ -94,7 +94,7 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredTopDomainId() != null && !getRequiredTopDomainId().isNull()) {
+				if( rhs.getRequiredTopDomainId() != null ) {
 					return( false );
 				}
 			}
@@ -102,8 +102,8 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 		}
 		else if( obj instanceof ICFIntTopProject) {
 			ICFIntTopProject rhs = (ICFIntTopProject)obj;
-			if( getRequiredTopDomainId() != null && !getRequiredTopDomainId().isNull() ) {
-				if( rhs.getRequiredTopDomainId() != null && !rhs.getRequiredTopDomainId().isNull() ) {
+			if( getRequiredTopDomainId() != null ) {
+				if( rhs.getRequiredTopDomainId() != null ) {
 					if( ! getRequiredTopDomainId().equals( rhs.getRequiredTopDomainId() ) ) {
 						return( false );
 					}
@@ -113,7 +113,7 @@ public class CFIntBuffTopProjectByTopDomainIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredTopDomainId() != null && !getRequiredTopDomainId().isNull()) {
+				if( rhs.getRequiredTopDomainId() != null ) {
 					return( false );
 				}
 			}

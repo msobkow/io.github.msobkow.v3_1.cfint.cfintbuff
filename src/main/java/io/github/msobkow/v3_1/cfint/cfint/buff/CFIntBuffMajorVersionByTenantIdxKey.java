@@ -83,8 +83,8 @@ public class CFIntBuffMajorVersionByTenantIdxKey
 		}
 		else if( obj instanceof ICFIntMajorVersionByTenantIdxKey ) {
 			ICFIntMajorVersionByTenantIdxKey rhs = (ICFIntMajorVersionByTenantIdxKey)obj;
-			if( getRequiredTenantId() != null && !getRequiredTenantId().isNull() ) {
-				if( rhs.getRequiredTenantId() != null && !rhs.getRequiredTenantId().isNull() ) {
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
 						return( false );
 					}
@@ -94,7 +94,7 @@ public class CFIntBuffMajorVersionByTenantIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredTenantId() != null && !getRequiredTenantId().isNull()) {
+				if( rhs.getRequiredTenantId() != null ) {
 					return( false );
 				}
 			}
@@ -102,8 +102,8 @@ public class CFIntBuffMajorVersionByTenantIdxKey
 		}
 		else if( obj instanceof ICFIntMajorVersion) {
 			ICFIntMajorVersion rhs = (ICFIntMajorVersion)obj;
-			if( getRequiredTenantId() != null && !getRequiredTenantId().isNull() ) {
-				if( rhs.getRequiredTenantId() != null && !rhs.getRequiredTenantId().isNull() ) {
+			if( getRequiredTenantId() != null ) {
+				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
 						return( false );
 					}
@@ -113,7 +113,7 @@ public class CFIntBuffMajorVersionByTenantIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredTenantId() != null && !getRequiredTenantId().isNull()) {
+				if( rhs.getRequiredTenantId() != null ) {
 					return( false );
 				}
 			}

@@ -109,8 +109,8 @@ public class CFIntBuffMajorVersionByNameIdxKey
 		}
 		else if( obj instanceof ICFIntMajorVersionByNameIdxKey ) {
 			ICFIntMajorVersionByNameIdxKey rhs = (ICFIntMajorVersionByNameIdxKey)obj;
-			if( getRequiredSubProjectId() != null && !getRequiredSubProjectId().isNull() ) {
-				if( rhs.getRequiredSubProjectId() != null && !rhs.getRequiredSubProjectId().isNull() ) {
+			if( getRequiredSubProjectId() != null ) {
+				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
 						return( false );
 					}
@@ -120,7 +120,7 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredSubProjectId() != null && !getRequiredSubProjectId().isNull()) {
+				if( rhs.getRequiredSubProjectId() != null ) {
 					return( false );
 				}
 			}
@@ -143,8 +143,8 @@ public class CFIntBuffMajorVersionByNameIdxKey
 		}
 		else if( obj instanceof ICFIntMajorVersion) {
 			ICFIntMajorVersion rhs = (ICFIntMajorVersion)obj;
-			if( getRequiredSubProjectId() != null && !getRequiredSubProjectId().isNull() ) {
-				if( rhs.getRequiredSubProjectId() != null && !rhs.getRequiredSubProjectId().isNull() ) {
+			if( getRequiredSubProjectId() != null ) {
+				if( rhs.getRequiredSubProjectId() != null ) {
 					if( ! getRequiredSubProjectId().equals( rhs.getRequiredSubProjectId() ) ) {
 						return( false );
 					}
@@ -154,7 +154,7 @@ public class CFIntBuffMajorVersionByNameIdxKey
 				}
 			}
 			else {
-				if( rhs.getRequiredSubProjectId() != null && !getRequiredSubProjectId().isNull()) {
+				if( rhs.getRequiredSubProjectId() != null ) {
 					return( false );
 				}
 			}
