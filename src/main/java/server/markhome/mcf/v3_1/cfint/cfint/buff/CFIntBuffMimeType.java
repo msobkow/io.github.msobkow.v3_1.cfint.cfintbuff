@@ -68,9 +68,7 @@ public class CFIntBuffMimeType
 
 	@Override
 	public void setPKey(Integer requiredMimeTypeId) {
-		if (requiredMimeTypeId != null) {
-			setRequiredMimeTypeId(requiredMimeTypeId);
-		}
+		this.requiredMimeTypeId = requiredMimeTypeId;
 	}
 
 	@Override
